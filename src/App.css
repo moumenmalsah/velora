@@ -1,0 +1,125 @@
+/* VELORA - Custom App Styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(201, 169, 98, 0.3);
+  color: #1A1A1A;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #C9A962;
+  outline-offset: 2px;
+}
+
+/* Image loading placeholder */
+img {
+  background-color: #F5F0E8;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hover scale */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Custom transition for cards */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gold shimmer effect */
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 169, 98, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Particle animation variations */
+.particle:nth-child(odd) {
+  animation-duration: 7s;
+  animation-delay: 0.5s;
+}
+
+.particle:nth-child(even) {
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-white\/60,
+  .text-white\/70,
+  .text-white\/80 {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .text-\[\#1A1A1A\]\/60,
+  .text-\[\#1A1A1A\]\/70 {
+    color: rgba(26, 26, 26, 0.9);
+  }
+}
